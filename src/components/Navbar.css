@@ -5,6 +5,7 @@
     padding: 0 30px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.25);
     width: 95%;
+    max-width: 1180px;
     height: 80px;
     border-radius: 13px;
     position: fixed;
@@ -23,10 +24,10 @@
 }
 
 .nav-menu{
-  display: grid;
-  grid-template-columns: repeat(6, auto);
-  grid-gap: 15px;
+  display: flex;
+  gap: 15px;
   list-style: none;
+  align-items: center;
 
 }
 
@@ -56,9 +57,9 @@
   display: none; /* This line hides the mobile navigation links by default. */
 }
 
-button{
+.NavbarItems button{
   padding: 0.5rem 1rem;
-  white-space: nowrap; /* This line prevents the button text from wrapping to a new line. */
+  white-space: nowrap;
     border-radius: 0.3rem;
     font-size: 1rem;
     border: none;
@@ -66,7 +67,7 @@ button{
 
 }
 
-button:hover{
+.NavbarItems button:hover{
   background-color: #151516;
   color: #fff;
 }
@@ -79,6 +80,9 @@ button:hover{
 
   .NavbarItems{
     z-index: 99;
+    width: calc(100% - 2rem);
+    height: 72px;
+    padding: 0 20px;
   }
   .nav-menu{
     display:flex;
@@ -86,19 +90,21 @@ button:hover{
     justify-content: center;
     background: #fff;
     position: absolute;
-    top:0; /* This line sets the top position of the navigation menu to 0, which means that it will be positioned at the top of the viewport. */
-    left:-100%;  /* This line sets the left position of the navigation menu to -100%, which means that it will be positioned off-screen to the left. */
+    top:0;
+    left:-110%;
     opacity:0;
     align-items: stretch;
     padding: 80px 0 30px 0;
     margin: 0;
     width: 100%;
+    min-width: 0;
+    transition: left 0.25s ease, opacity 0.25s ease;
    
   }
   .nav-menu.active{
     left:0;
     opacity:1;
-     z-index: -1; /* This line sets the z-index of the navigation menu to -1, which means that it will be positioned behind other elements on the page. */
+     z-index: -1;
  
 
   }
@@ -115,7 +121,7 @@ button:hover{
     transition:none;
 
   }
-  button{
+  .NavbarItems button{
     display:none;
   }
 .nav-links-mobile{
@@ -133,7 +139,7 @@ button:hover{
   letter-spacing: 2px;
 }
 .menu-icons{
-  display: block; /* This line hides the menu icons by default. */
+  display: block;
 }
 
 .menu-icons i{
@@ -143,5 +149,28 @@ button:hover{
 
 
   }
+
+@media screen and (max-width: 550px){
+  .NavbarItems{
+    width: calc(100% - 1rem);
+    height: 64px;
+    top: 10px;
+    padding: 0 16px;
+    border-radius: 10px;
+  }
+
+  .navbar-logo{
+    font-size: 1.6rem;
+  }
+
+  .nav-menu{
+    padding: 72px 0 24px 0;
+  }
+
+  .nav-links{
+    font-size: 1.15rem;
+    padding: 1.25rem 0;
+  }
+}
 
   

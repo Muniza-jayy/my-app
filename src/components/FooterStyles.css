@@ -1,6 +1,6 @@
 .footer {
   width: 100%;
-  padding: 4rem 6rem 3rem;
+  padding: 4rem max(2rem, calc((100vw - 1180px) / 2)) 3rem;
   background: #222;
   color: #fff;
   text-align: start;
@@ -45,7 +45,7 @@
 
 .bottom {
   display: grid;
-  grid-template-columns: repeat(4, minmax(140px, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 2rem;
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
@@ -75,7 +75,7 @@
   }
 
   .bottom {
-    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

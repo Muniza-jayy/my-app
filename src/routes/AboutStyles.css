@@ -1,5 +1,6 @@
 .about-container {
-  margin: 4rem 6rem;
+  width: min(100% - 4rem, 1180px);
+  margin: 4rem auto;
   color: #2a2a2a;
   text-align: start;
 }
@@ -25,6 +26,7 @@
 
 .about-intro img {
   width: 100%;
+  max-width: 100%;
   height: 320px;
   object-fit: cover;
   border-radius: 7px;
@@ -51,7 +53,8 @@
 
 @media screen and (max-width: 850px) {
   .about-container {
-    margin: 4rem 2rem;
+    width: calc(100% - 4rem);
+    margin: 4rem auto;
   }
 
   .about-intro {
@@ -65,7 +68,8 @@
 
 @media screen and (max-width: 550px) {
   .about-container {
-    margin: 3rem 1rem;
+    width: calc(100% - 2rem);
+    margin: 3rem auto;
     text-align: center;
   }
 

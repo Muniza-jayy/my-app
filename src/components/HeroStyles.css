@@ -1,12 +1,16 @@
 .hero {
   width: 100%;
+  min-height: 620px;
   height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 .hero-mid {
     width: 100%;
+    min-height: 420px;
     height: 70vh;
     position: relative;
+    overflow: hidden;
 
 }
 
@@ -26,7 +30,7 @@ padding-top: 4rem !important;
 
 .hero-text {
   position: absolute;
-  width: 100%;
+  width: min(100% - 2rem, 900px);
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -35,7 +39,7 @@ padding-top: 4rem !important;
 }
 
 .hero-text h1 {
-  font-size: 3rem;
+  font-size: clamp(2.2rem, 5vw, 3rem);
   font-weight: 800;
   color: green;
   -webkit-background-clip: text;
@@ -44,7 +48,7 @@ padding-top: 4rem !important;
 }
 
 .hero-text p {
-  font-size: 1.3rem;
+  font-size: clamp(1rem, 2vw, 1.3rem);
   padding: 0.5rem 0 2rem;
 }
 
@@ -65,7 +69,16 @@ padding-top: 4rem !important;
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
+    .hero {
+        min-height: 560px;
+    }
+
+    .hero-mid {
+        min-height: 360px;
+        height: 55vh;
+    }
+
     .hero-text h1 {
         padding: 10px 20px;
         
@@ -78,5 +91,24 @@ padding-top: 4rem !important;
         padding: 0.8rem 1.1rem;
         font-size: 1rem;
         border-radius: 6px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .hero {
+        min-height: 520px;
+    }
+
+    .hero-mid {
+        min-height: 300px;
+        height: 45vh;
+    }
+
+    .hero-mid h1 {
+        padding-top: 2rem !important;
+    }
+
+    .hero-text {
+        top: 56%;
     }
 }
