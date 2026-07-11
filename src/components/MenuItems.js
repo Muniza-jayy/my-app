@@ -20,12 +20,5 @@ export const MenuItems = [
         url:"/contact",
         cName : "nav-links",
         icons: "fas fa-envelope"
-    },
-     {
-        title : "Sign Up",
-        url:"/signup",
-        cName : "nav-links-mobile",
-     
     }
-
 ]
