@@ -1,0 +1,147 @@
+.NavbarItems{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    width: 95%;
+    height: 80px;
+    border-radius: 13px;
+    position: fixed;
+    background-color: #fff;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+}
+
+.navbar-logo{
+  color: #222;
+  font-size: 2rem;
+  cursor: pointer;
+
+}
+
+.nav-menu{
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  grid-gap: 15px;
+  list-style: none;
+
+}
+
+.nav-links{
+  text-decoration: none;
+  color : #222;
+  font-size: 1.2rem;
+  font-weight: 600;
+    padding: 0.7rem 1rem;
+    white-space: nowrap;
+}
+
+.nav-links i{
+  padding-right: 10px;
+}
+ 
+.nav-links:hover{
+  background-color: #01959a;
+  color: white;
+  border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+  
+
+}
+
+.nav-links-mobile{
+  display: none; /* This line hides the mobile navigation links by default. */
+}
+
+button{
+  padding: 0.5rem 1rem;
+  white-space: nowrap; /* This line prevents the button text from wrapping to a new line. */
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    border: none;
+    cursor:pointer;
+
+}
+
+button:hover{
+  background-color: #151516;
+  color: #fff;
+}
+
+.menu-icons{
+  display: none; /* This line hides the menu icons by default. */
+}
+
+@media screen and (max-width: 850px){
+
+  .NavbarItems{
+    z-index: 99;
+  }
+  .nav-menu{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+    position: absolute;
+    top:0; /* This line sets the top position of the navigation menu to 0, which means that it will be positioned at the top of the viewport. */
+    left:-100%;  /* This line sets the left position of the navigation menu to -100%, which means that it will be positioned off-screen to the left. */
+    opacity:0;
+    align-items: stretch;
+    padding: 80px 0 30px 0;
+    margin: 0;
+    width: 100%;
+   
+  }
+  .nav-menu.active{
+    left:0;
+    opacity:1;
+     z-index: -1; /* This line sets the z-index of the navigation menu to -1, which means that it will be positioned behind other elements on the page. */
+ 
+
+  }
+
+  .nav-links{
+    display: block;
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 2rem 0;
+  }
+
+  .nav-links:hover{
+    background-color: #01959a;
+    transition:none;
+
+  }
+  button{
+    display:none;
+  }
+.nav-links-mobile{
+  display: block;
+  text-align: center;
+  padding: 1.5rem;
+  margin: auto;
+  border-radius: 4px;
+  width: 80%;
+  background: #01959a;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.menu-icons{
+  display: block; /* This line hides the menu icons by default. */
+}
+
+menu-icons i{
+  font-size: 1.2rem;
+  color: #222;
+}
+
+
+  }
+
+  
